@@ -1,18 +1,24 @@
+# terraform
+terraform{
+    required_version = ">=0.13"
+    required_providers{
+        aws = {
+            source = "hashicorp/aws"
+            version = "~>3.0"
+        }
+    }
+}
+
+# provider
 provider "aws"{
     region = "ap-northeast-1"
 }
 
-resource "aws_instance" "hello-world"{
-    ami = "ami-070e0d4707168fc07"
-    instance_type = "t3.micro"
+# variables
+variable "project"{
+    type = string
+}
 
-    tags = {
-        Name = "Helloworld"
-    }
-
-    user_data = <<EOF
-#"/bin/bash
-amazon-linux-extras install -y nginx1.12
-systemctl start nginx
-EOF
+variable "environment"{
+    type = string
 }
