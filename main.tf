@@ -7,6 +7,6 @@ resource "aws_instance" "hello-world"{
     instance_type = "t3.micro"
 
     tags = [
-        name = "Helloworld"
+        Name = "Helloworld"
     ]
 }
