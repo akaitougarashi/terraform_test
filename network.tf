@@ -92,6 +92,17 @@ resource "aws_route_table_association" "public_rt_1c"{
     subnet_id = aws_subnet.public_subnet_1c.id
 }
 
+resource "aws_route_table" "private_rc"{
+    vpc_id = aws_vpc.vpc.id
+    
+    tags = {
+        Name = "${var.project}-${var.environment}-private-rt"
+        project = var.project
+        Env = var.environment
+        Type = "private"
+    }
+}
+
 resource "aws_route_table_association" "private_rt_1a"{
     route_table_id = aws_route_table.private_rt.id
     subnet_id = aws_subnet.private_subnet_1a.id
