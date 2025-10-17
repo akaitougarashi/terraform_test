@@ -71,7 +71,7 @@ resource "aws_subnet" "private_subnet_1c"{
 }
 
 # route table
-resource "aws_route_table" "public_rc"{
+resource "aws_route_table" "public_rt"{
     vpc_id = aws_vpc.vpc.id
     
     tags = {
@@ -92,7 +92,7 @@ resource "aws_route_table_association" "public_rt_1c"{
     subnet_id = aws_subnet.public_subnet_1c.id
 }
 
-resource "aws_route_table" "private_rc"{
+resource "aws_route_table" "private_rt"{
     vpc_id = aws_vpc.vpc.id
     
     tags = {
