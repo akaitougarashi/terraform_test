@@ -42,7 +42,7 @@ resource "aws_subnet" "public_subnet_1c"{
     }
 }
 
-resource "aws_subnet" "public_subnet_1a"{
+resource "aws_subnet" "private_subnet_1a"{
     vpc_id = aws_vpc.vpc.id
     availability_zone = "ap-northeast-la"
     cidr_block = "192.168.3.0/24"
@@ -56,7 +56,7 @@ resource "aws_subnet" "public_subnet_1a"{
     }
 }
 
-resource "aws_subnet" "public_subnet_1c"{
+resource "aws_subnet" "private_subnet_1c"{
     vpc_id = aws_vpc.vpc.id
     availability_zone = "ap-northeast-lc"
     cidr_block = "192.168.4.0/24"
