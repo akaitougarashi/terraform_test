@@ -37,7 +37,6 @@ resource "aws_security_group_rule" "web_out_tcp3000" {
     protocol = "tcp"
     from_port = 3000
     to_port = 3000
-    cidr_blocks = ["0.0.0.0/0"]
     source_security_group_id = aws_security_group.app_sg.id
 }
 
@@ -122,7 +121,6 @@ resource "aws_security_group_rule" "opmng_in_tcp3306" {
     protocol = "tcp"
     from_port = 3306
     to_port = 3306
-    cidr_blocks = ["0.0.0.0/0"]
     source_security_group_id = aws_security_group.app_sg.id
 }
 
