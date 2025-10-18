@@ -51,7 +51,7 @@ resource "aws_db_instance" "mysql_standalone" {
   username = "admin"
   password = random_string.db_password.result
 
-  instance_class = "db.t2.micro"
+  instance_class = "db.t3.micro"
 
   allocated_storage     = 20
   max_allocated_storage = 50
