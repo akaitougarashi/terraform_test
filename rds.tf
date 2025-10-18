@@ -4,7 +4,7 @@ resource "aws_db_parameter_group" "mysql_standalone_parametergroup"{
     family = "mysql8.0"
 
     parameter {
-      name = "charavter_set_database"
+      name = "character_set_database"
       value = "utf8mb4"
     }
 
